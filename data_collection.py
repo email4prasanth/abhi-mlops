@@ -11,7 +11,7 @@ df = pd.read_csv(url)
 print("✅ Columns:", df.columns.tolist())  # Debug print
 
 # Prepare data
-X = df[["Pregnancies","Glucose","BloodPressure","SkinThickness","Insulin","BMI","DiabetesPedigreeFunction","Age"]]
+X = df[['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']]
 y = df["Outcome"]
 
 # Split
@@ -21,6 +21,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = RandomForestClassifier()
 model.fit(X_train, y_train)
 
-# Save
+# Save model
 joblib.dump(model, "diabetes_model.pkl")
 print("✅ Model saved as diabetes_model.pkl")
